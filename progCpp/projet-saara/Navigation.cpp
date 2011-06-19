@@ -3,5 +3,4 @@
 #include "Navigation.h"
 
 Navigation::Navigation(){
-	printf("fdsfdsfsdf");
 }
