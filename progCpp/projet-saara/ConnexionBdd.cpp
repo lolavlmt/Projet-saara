@@ -16,7 +16,7 @@ void ConnexionBdd::insert(string request, sqlite3 &db_handle){
 	sqlite3_prepare_v2(&db_handle, request.c_str(), request.length(), &_pStmt, NULL);
 	sqlite3_step(_pStmt);
 	sqlite3_finalize(_pStmt);
-	//test
+	//test commit
 }
 
 ConnexionBdd::tableResult ConnexionBdd::select(string request, sqlite3 &db_handle){
