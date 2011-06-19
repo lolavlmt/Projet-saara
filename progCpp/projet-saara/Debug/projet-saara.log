@@ -1,0 +1,26 @@
+﻿La génération a démarré 19/06/2011 19:08:46.
+     1>Projet "C:\Users\Lola\Projet-saara\progCpp\projet-saara\projet-saara.vcxproj" sur le nœud 2 (build cible(s)).
+     1>InitializeBuildStatus:
+         Mise à jour de l'horodatage "Debug\projet-saara.unsuccessfulbuild".
+       ClCompile:
+         Toutes les sorties sont à jour.
+         c:\Program Files\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt ConnexionBdd.cpp
+         ConnexionBdd.cpp
+       Link:
+         c:\Program Files\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Lola\Projet-saara\progCpp\Debug\projet-saara.exe" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\projet-saara.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\Lola\Projet-saara\progCpp\Debug\projet-saara.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Lola\Projet-saara\progCpp\Debug\projet-saara.lib" /MACHINE:X86 Debug\sqlite3.obj
+         Debug\ConnexionBdd.obj
+         Debug\Main.obj
+         Debug\Navigation.obj
+         Debug\User.obj
+         LINK : C:\Users\Lola\Projet-saara\progCpp\Debug\projet-saara.exe introuvable ou non généré par la dernière édition de liens incrémentielle ; édition de liens complète en cours
+         projet-saara.vcxproj -> C:\Users\Lola\Projet-saara\progCpp\Debug\projet-saara.exe
+       Manifest:
+         C:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"C:\Users\Lola\Projet-saara\progCpp\Debug\projet-saara.exe;#1" /manifest "Debug\projet-saara.exe.intermediate.manifest"
+       FinalizeBuildStatus:
+         Suppression du fichier "Debug\projet-saara.unsuccessfulbuild".
+         Mise à jour de l'horodatage "Debug\projet-saara.lastbuildstate".
+     1>Génération du projet "C:\Users\Lola\Projet-saara\progCpp\projet-saara\projet-saara.vcxproj" terminée (build cible(s)).
+
+La génération a réussi.
+
+Temps écoulé 00:00:06.19

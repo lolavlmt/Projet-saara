@@ -1,0 +1,4 @@
+class Navigation{
+public:
+	Navigation();
+};
