@@ -17,8 +17,6 @@ void Main::getOrientationUser(){
     IWRGetMagYaw(&myaw);
 
 	sprintf(buffer, _T("%s|%d;%d;%d\n"), buffer, yaw, pitch, roll);
-
-	//sendDataUserToLua(csock);
 }
 
 void Main::sendDataUserToLua(SOCKET csock){
@@ -46,7 +44,6 @@ void VRPN_CALLBACK Main::handle_tracker(void* userData, const vrpn_TRACKERCB t )
 
 		if(t.sensor > 0){
 			sprintf(uData->_this->buffer, "%s|%f;%f;%f", uData->_this->buffer, t.pos[0], t.pos[1], t.pos[2]);
-			//if(t.sensor == 14){uData->_this->getOrientationUser(uData->socketClient);}
 			if(t.sensor == 14){uData->_this->sendDataUserToLua(uData->socketClient);}
 		}else if(t.sensor == 0){
 			sprintf(uData->_this->buffer, "%f;%f;%f", t.pos[0], t.pos[1], t.pos[2]);
