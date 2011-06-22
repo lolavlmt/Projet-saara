@@ -11,29 +11,33 @@ sqlite3 * ConnexionBdd::open(const char *srcFile){
 	return db_handle;
 }
 
-void ConnexionBdd::insert(string request, sqlite3 &db_handle){
+void ConnexionBdd::insert(string request, sqlite3 *db_handle){
 	sqlite3_stmt* _pStmt;
-	sqlite3_prepare_v2(&db_handle, request.c_str(), request.length(), &_pStmt, NULL);
+	sqlite3_prepare_v2(db_handle, request.c_str(), request.length(), &_pStmt, NULL);
 	sqlite3_step(_pStmt);
 	sqlite3_finalize(_pStmt);
-	//test commit
 }
 
-ConnexionBdd::tableResult ConnexionBdd::select(string request, sqlite3 &db_handle){
+ConnexionBdd::TableResult ConnexionBdd::select(string request, sqlite3 *db_handle){
 	sqlite3_stmt* _pStmt;
-	sqlite3_prepare_v2(&db_handle, request.c_str(), request.length(), &_pStmt, NULL);
+
+	if(sqlite3_prepare_v2(db_handle, request.c_str(), request.length(), &_pStmt, NULL) != SQLITE_OK)
+	{std::cout <<"Erreur dans la préparation de requete"  << std::endl;}
+
+	TableResult result;
 
 	int iColumnCount = sqlite3_column_count(_pStmt);
 	int iResult=0;
-	tableResult result;
-
 	while ((iResult = sqlite3_step(_pStmt)) != SQLITE_DONE){
+		ResultRequest structResult;
+		
 		if (iResult == SQLITE_ROW){
 			for (int i = 0 ; i < iColumnCount ; i++){
-				result.back().field = (char *)sqlite3_column_text(_pStmt, i);
-				result.back().value = (char *)sqlite3_column_name(_pStmt, i);
+				structResult.field.push_back((char *)sqlite3_column_name(_pStmt, i));
+				structResult.value.push_back((char *)sqlite3_column_text(_pStmt, i));
 			}
 		}
+		result.push_back(structResult);
 	}
 
 	return result;
